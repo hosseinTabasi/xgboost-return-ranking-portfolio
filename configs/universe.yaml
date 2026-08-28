@@ -1,0 +1,42 @@
+# Universe and experiment settings.
+# Copyright (c) 2026 Hossein Tabasi. MIT License.
+
+seed: 42
+start: "2016-01-01"
+end: "2026-08-01"
+
+# Investable names. Failed downloads are dropped and recorded in results/tables/download_log.csv.
+investable:
+  us_large_cap: [AAPL, MSFT, AMZN, GOOGL, JPM, JNJ, XOM, NVDA]
+  sector_etfs: [XLK, XLF, XLE, XLV]
+  gold: [GLD]
+  bonds: [TLT, IEF, LQD]
+  crypto: [BTC-USD, ETH-USD]
+
+# Feature-only series. If a download fails, the corresponding feature is omitted.
+macro: ["^VIX", "^TNX"]
+
+costs:
+  default_bps: 15   # stocks, ETFs, gold, bonds (one-way)
+  crypto_bps: 40    # BTC-USD, ETH-USD (one-way)
+
+walk_forward:
+  min_train_months: 36
+  val_tail_months: 12
+
+xgb_grid:
+  n_estimators: [100, 200]
+  max_depth: [3, 5]
+  learning_rate: [0.05, 0.1]
+
+portfolio:
+  top_k: 5
+  top_frac: 0.30
+  max_weight: 0.20
+  start_wealth: 1.0
+  mv_risk_aversion: 5.0
+
+sixty_forty:
+  bond: TLT
+  bond_fallback: IEF
+  bond_weight: 0.40
