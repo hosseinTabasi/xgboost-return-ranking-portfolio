@@ -1,0 +1,100 @@
+{
+  "data_mode": "FULL-public",
+  "start": "2016-01-01",
+  "end": "2026-07-31",
+  "investable": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "JPM",
+    "JNJ",
+    "XOM",
+    "NVDA",
+    "XLK",
+    "XLF",
+    "XLE",
+    "XLV",
+    "GLD",
+    "TLT",
+    "IEF",
+    "LQD",
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "macro": [
+    "^VIX",
+    "^TNX"
+  ],
+  "crypto": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "failed": {},
+  "sources": {
+    "AAPL": "yfinance ok n=2659",
+    "MSFT": "yfinance ok n=2659",
+    "AMZN": "yfinance ok n=2659",
+    "GOOGL": "yfinance ok n=2659",
+    "JPM": "yfinance ok n=2659",
+    "JNJ": "yfinance ok n=2659",
+    "XOM": "yfinance ok n=2659",
+    "NVDA": "yfinance ok n=2659",
+    "XLK": "yfinance ok n=2659",
+    "XLF": "yfinance ok n=2659",
+    "XLE": "yfinance ok n=2659",
+    "XLV": "yfinance ok n=2659",
+    "GLD": "yfinance ok n=2659",
+    "TLT": "yfinance ok n=2659",
+    "IEF": "yfinance ok n=2659",
+    "LQD": "yfinance ok n=2659",
+    "BTC-USD": "yfinance ok n=3865",
+    "ETH-USD": "yfinance ok n=3187",
+    "^VIX": "yfinance ok n=2660",
+    "^TNX": "yfinance ok n=2658"
+  },
+  "notes": [
+    "XGB engine=xgboost last_params={'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.05}",
+    "xgboost json -> /workspace/xgboost-return-ranking-portfolio/models/xgb_last.json",
+    "60/40 composition: 60% equal-weight of available names in ['AAPL', 'MSFT', 'AMZN', 'GOOGL', 'JPM', 'JNJ', 'XOM', 'NVDA', 'XLK', 'XLF', 'XLE', 'XLV', 'GLD', 'BTC-USD', 'ETH-USD'] and 40% in TLT (fallback IEF).",
+    "SHAP summary written to /workspace/xgboost-return-ranking-portfolio/results/figures/shap_summary.png."
+  ],
+  "oos_start": "2020-02-28",
+  "oos_end": "2026-06-30",
+  "n_oos_months": 77,
+  "feature_cols": [
+    "mom_1m",
+    "mom_3m",
+    "mom_6m",
+    "mom_12m",
+    "mom_12_1",
+    "vol_21d",
+    "vol_63d",
+    "mdd_12m",
+    "dist_ma50",
+    "dist_ma200",
+    "rsi_14",
+    "macd_hist",
+    "rank_mom_12m",
+    "rank_vol_21d",
+    "rank_mom_1m",
+    "mkt_ret_1m",
+    "lag_target_ret_1m",
+    "vix_chg_1m",
+    "tnx_chg_1m"
+  ],
+  "xgb_engine": "xgboost",
+  "xgb_last_params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "comparison": {
+    "xgb_top5_ew_sharpe_net": 0.8396435125985267,
+    "equal_weight_sharpe_net": 1.32210086837291,
+    "mom_top5_ew_sharpe_net": 1.195824026841537,
+    "hist_mv_sharpe_net": 1.3654813713643281,
+    "sixty_forty_sharpe_net": 0.973394986298573
+  },
+  "cost_note": "one-way costs 15 bps stocks/ETFs, 40 bps crypto; OOS 2020-02-28 to 2026-06-30; data_mode=FULL-public; prices 2016-01-01 to 2026-07-31"
+}

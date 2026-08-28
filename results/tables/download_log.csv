@@ -1,0 +1,21 @@
+ticker,source
+AAPL,yfinance ok n=2659
+MSFT,yfinance ok n=2659
+AMZN,yfinance ok n=2659
+GOOGL,yfinance ok n=2659
+JPM,yfinance ok n=2659
+JNJ,yfinance ok n=2659
+XOM,yfinance ok n=2659
+NVDA,yfinance ok n=2659
+XLK,yfinance ok n=2659
+XLF,yfinance ok n=2659
+XLE,yfinance ok n=2659
+XLV,yfinance ok n=2659
+GLD,yfinance ok n=2659
+TLT,yfinance ok n=2659
+IEF,yfinance ok n=2659
+LQD,yfinance ok n=2659
+BTC-USD,yfinance ok n=3865
+ETH-USD,yfinance ok n=3187
+^VIX,yfinance ok n=2660
+^TNX,yfinance ok n=2658
